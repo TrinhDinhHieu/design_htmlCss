@@ -1,0 +1,349 @@
+/* reset css */
+*,*::before,*::after{
+    margin: 0;
+    padding: 0;
+    /* chrome & safari */
+    -webkit-box-sizing: border-box;
+    /* firefox */
+    -moz-box-sizing: border-box;
+    /* microsoft */
+    -ms-box-sizing: border-box;
+    /* opera */
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+}
+html {
+    font-size: 62.5%;
+    /* 1rem = 10px */
+    /* su dung don vi css theo ti le font chu */
+}
+body {
+    font-family: 'Lato', sans-serif;
+    line-height: 1;
+    font-weight: 400;
+}
+/* css common */
+a {
+    text-decoration: none;
+}
+button {
+    cursor: pointer;
+}
+input, textarea, button{
+    outline: none;
+    box-shadow: none;
+    font-family: 'Lato', sans-serif;
+}
+/* bien css */
+:root{
+    --primaryColor: #65c29e;
+    --headingColor: #353738;
+    --textColor: #848789;
+    --bgLight: #f7f7f7;
+    --bgWhite: #ffffff;
+}
+/* warper */
+.warper{
+    max-width: 160rem;
+    margin: 0 auto;
+}
+.header{
+    min-height: 80rem;
+    background-image: url('../images/bgr-header.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    display:flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+.nav {
+    margin-top: 3.5rem;
+}
+.nav__list {
+    display: flex;
+    align-items: center;
+}
+.nav__item {
+    padding-left: 4rem;
+    padding-right: 4rem;
+    position: relative;
+}
+/* css tao dau "." trong menu */
+.nav__item:first-child::after, .nav__item:nth-child(4)::after {
+    content: ".";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: 2rem;
+}
+.nav__link {
+    color: var(--headingColor);
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    font-weight:700;
+    display: block;
+    position: relative;
+}
+/* end css header */
+
+/* css feature */
+.feature__header{
+    background-color: var(--bgLight);
+    padding: 11.7rem 1.5rem 14.2rem;
+    text-align: center;
+}
+.feature__img--top{
+    margin: 0 auto 3.5rem;
+}
+.feature__heading{
+    margin-bottom: 3.5rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing:0.3rem;
+    word-spacing: 1.2rem;
+    color: var(--headingColor);
+    line-height:1.6;
+    text-align: center;
+}
+.feature__header--desc{
+    color: var(--textColor);
+    font-size: 1.8rem;
+    line-height: 1.6;
+    max-width: 108rem;
+    margin: 0 auto;
+}
+.feature__item{
+    display: flex;
+    /* flex-direction: row;
+    flex-wrap: wrap; */
+    flex-flow: row wrap;
+    height: 67rem;
+    /* khong xuat hien thanh scroll ngang hoac doc */
+    overflow: hidden;
+}
+/* css cot ben trai =>tỷ lệ 2/3 */
+.feature__item--img {
+    width:67%;
+    position: relative;
+}
+/* css cot ben phai => tỷ lệ 1/3*/
+.feature__item--content{
+    width: 33%;
+}
+/* anh nam ben trong cot ben trai */
+.feature__item .img_bg{
+    width: 100%;
+    height: 100%;
+    /* object-fit: cover; */
+}
+/* anh logo nam trong cot ben trai - de len anh to */
+.feature__item .img_brand{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+.feature__item--content{
+    height: 100%;
+    display: flex;
+    /* cot ben tren va ben duoi nam theo 1 cot doc */
+    flex-direction: column;
+    justify-content:space-between;
+}
+/* css cho cot Text ben tren nam trong cot ben phai */
+.feature__item--content-top{
+    background-color: var(--bgWhite);
+    padding: 0 6.8rem;
+    height: 67%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+.feature__item--text{
+    font-size:1.6rem;
+    color: var(--textColor);
+    line-height: 1.6;
+    text-align:justify;
+    padding-bottom: 4rem;
+    position: relative;
+}
+/* tao css dau gach ngang ben duoi the p */
+.feature__item--text::after{
+    content: " ";
+    position: absolute;
+    width: 7rem; /* chiều rộng kẻ gạch*/
+    background-color: #d7d7d7;
+    height: 1px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+/* tao arrow css => mũi tên tắng xuống */
+.feature__item--content-top::after{
+    content: "";
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    background-color: var(--bgWhite);
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%) rotate(-45deg);
+    z-index: 10;
+}
+/* css cho cot ben duoi nam trong cot ben phai */
+.feature__item--content-bottom{
+    height: 33%;
+}
+/* doi vi tri cot ben trai va ben phai cho nhau o li thu 2 */
+.feature__item:nth-child(2) .feature__item--img {
+    order: 2; /* đaỏ vị trí*/
+}
+/* xu ly css cho cac thanh phan o li cuoi cung */
+.feature__item:last-child > .feature__item--img{
+    width: 33%;
+}
+.feature__item:last-child > .feature__item--content{
+    width: 34%;
+}
+
+                /* Twitter  */
+.twitter{
+    background-color: var(--bgLight);
+    text-align: center;
+    padding: 12.4rem 1.5rem 6.5rem;
+}
+.twitter__icon {
+    font-size:3.2rem;
+    color: #56c7ee;
+    margin-bottom: 3.6rem;
+}
+.twitter__location, .twitter__author{
+    color: var(--headingColor);
+    font-weight: bold;
+}
+.twitter__heading{
+    font-size: 1.8rem;
+    margin-bottom: 2.5rem;
+}
+.twitter__time{
+position: relative;
+color: var(--textColor);
+font-weight: 300;
+margin-left: 1.2rem;
+/* padding-left: 1.3rem; */
+}
+.twitter__time::before{
+content: " /";
+bottom: 0;
+left: 0;
+transform: translateY(0px);
+color: var(--textColor);
+padding-right: 1.2rem;
+
+}
+.twitter__content{
+    font-size: 2.4rem;
+    color: var(--textColor);
+    font-style: italic;
+    line-height: 1.6;
+    margin: 0 auto 10.4rem ;
+    max-width: 104rem;
+}
+.twitter__pagination{
+    display: flex;
+    align-items:center;
+    justify-content: center;
+}
+.twitter__pagination--item{
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    border: thin solid #a9afb3;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+/* cái li nào tồn tại cả 2 class này mới dk tác động */
+.twitter__pagination--item.is__active{
+    background-color: var(--textColor);
+}
+
+/* images */
+.images {
+    display: flex;
+    justify-content: space-between;
+    height: 53.5rem;
+    overflow: hidden;
+}
+.images__block {
+    width: 33.333%;
+    height: 100%;
+    display: flex;
+    /* mac dinh cac thanh phan ben trong chia theo row */
+}
+.images__block:first-child {
+    /* fix lai cho li thu 1 */
+    flex-direction: column;
+}
+.images__block-item {
+    height: 50%;
+    width: 100%;
+}
+.images__block-item:first-of-type {
+    display: flex;
+}
+.images__item {
+    position: relative;
+    width: 50%;
+    height: 100%;
+}
+.images__block-item:last-of-type .images__item {
+    width: 100%;
+}
+.images__block:last-child {
+    flex-direction: column-reverse;
+}
+.images__item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #5ba68d;
+    opacity: 0.8;
+    z-index: 10;
+    display: none;
+}
+.images__item-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.images__item-brand {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 20;
+    text-align: center;
+    display: none;
+}
+.images__item-brand > img {
+    margin: 0 auto;
+}
+.images__item-text {
+    text-transform: uppercase;
+    color: white;
+    font-size: 1.4rem;
+    margin-top: 0.5rem;
+    font-weight: bold;
+}
+/* hover  */
+.images__item:hover::before, .images__item:hover .images__item-brand {
+    display: block;
+    cursor: pointer;
+}

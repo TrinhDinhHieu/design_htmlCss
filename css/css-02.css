@@ -1,0 +1,88 @@
+header.header >h1.title{
+    font-size: 2rem;
+    color: red;
+}
+
+header.header > h1.title ~ h2.content , p.text{ 
+    /* thẻ P và h2 dùng chung color : blue */
+    color: blue;
+}
+div.wraper  header.header + nav.nav > ul.menu li.item a.link {
+    color: red;
+}
+/* thẻ con đầu tiên */
+section.content :first-child{
+    color: red;
+}
+/* các thẻ gặp đầu tiên của các loại thẻ khác nhau */
+section.content :first-of-type{
+    color: blue;
+}
+/* thẻ con cuối cùng */
+section.content :last-child{
+    color: blue;
+}
+/* các thẻ gặp đầu tiên của các loại thẻ khác nhau theo chiều dưới lên */
+section.content :last-of-type{
+    color: pink;
+}
+/* thành phần t4 từ trên xuống */
+section.content :nth-child(4){
+    color: green;
+}
+/* thẻ thành phần t4 trong tổ hợp thẻ cùng loại */
+section.content :nth-of-type(4){
+    color: green;
+}
+/* thành phần t3 từ dưới lên  */
+section.content :nth-last-child(3){
+    color: brown;
+}
+ /* các thẻ có tt 2 đém từ dưới lên trong tổ hợp thẻ cùng loại */
+section.content :nth-last-of-type(2){
+    color: orange;
+}
+
+/* tìm thành phần li cuối trung trong thẻ ul */
+ul.nav li:last-child{
+    color: red;
+}
+/* thẻ only-child chỉ hoạt động khi chỉ có 1 thẻ con duy nhất  trong nó */
+div.parent :only-child{
+    color:red
+}
+input[type = " email"]:focus{ /* :focus cách ra thì nghĩa là  sẽ tìm thành phần con trong thẻ input */
+    width: 200px;
+    height: 30px;
+    outline: none; /* viền ngoài */
+    border: 1px solid red;
+}
+
+input[type=" checkbox"]:checked{
+    height: 200px;
+    width: 200px;
+}
+
+/* thẻ  a */
+a#link:active{
+    color:yellow
+}
+ul.nav li:hover{
+    color:pink
+}
+p.text-title::first-letter{
+    color: blue;
+    font-size: 100px
+}
+p.text-title::first-line{
+    color: red;
+    font-size: 50px
+}
+p.text-title::before{
+    content: "Hello World";
+}
+p.text-title::selection{
+    color: blue;
+    font-size: 50px;
+
+}

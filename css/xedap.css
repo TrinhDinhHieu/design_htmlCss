@@ -1,0 +1,212 @@
+*, *::after, *::before{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    
+}
+html{
+    font-size: 62.5%;
+    /* 10px=1rem */
+}
+body{
+    font-family: 'Lato', sans-serif;
+    /* khoảng cach giữa các dòng */
+    line-height: 1;
+    font-weight: 400; /* kiểu argula*/
+}
+a{
+    text-decoration: none;
+}
+button{
+    cursor: pointer;
+
+}
+input,textarea, button{
+    outline: none;
+    box-shadow: none;
+    font-family: 'Lato', sans-serif;
+} 
+:root {
+    --heading-color:#4d4959;
+    --title-color:#353738;
+    --text-color:#848789;
+    --primary-color:#64c29e;
+    --bg-light:#f7f7f7;
+    --bg-white:#ffffff;
+
+}
+.wraper{
+    max-width: 160rem;
+    margin: 0 auto;
+
+}
+.header{
+    min-height: 80rem;
+    background-image: url(../images/bgr-header.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+.nav{
+    margin-top: 3.5rem;
+}
+.nav__list{
+    display: flex;
+    align-items: center;
+    
+}
+.nav__item{
+    padding-right:4rem ;
+    padding-left:4rem ;
+    position: relative;
+}
+.nav__link{
+    color: var(--heading-color);
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    font-weight: bold ;
+    display: block; /* vì thẻ a là inline nên để block để n ăn theo thẻ div*/
+    position: relative; /* di chuyển ko bị ảnh hưởng đối vs thẻ khác */
+    
+}
+/* tạo dau chấm cách chạy =>  (.nav__item:first-child)::after */
+.nav__item:first-child::after, .nav__item:nth-child(4)::after{
+    content: '.';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: 2rem;
+
+}
+        /* <!--css feature  --> */
+.feature__header{
+  min-height: 47rem;
+  background-color: var(--bg-light);
+    text-align: center;
+    padding: 11.5rem 1.5rem 14rem;
+    
+}
+.feature__img--top{
+    margin: 0 auto 3.5rem ;
+}
+.feature__heading{
+    margin-bottom: 3.5rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--heading-color);
+    letter-spacing: 0.2rem;
+    word-spacing: 1.2rem;
+    line-height: 1.6;
+}
+.feature__header--desc{
+    color: var(--text-color);
+    font-size: 1.8rem;
+    line-height: 1.6;
+    margin: 0 auto;
+    max-width: 108rem;
+}
+.feature__item{
+    display: flex;
+    height: 60rem;
+    flex-wrap: wrap;
+    flex-direction: row;
+    overflow: hidden;
+}
+/* css co ben trai  */
+.feature__item--img {
+    width:67%;
+    position: relative;
+}
+/* css col ben phai  */
+.feature__item--content{
+    width: 33%;
+}
+.feature__item--text{
+    font-size: 1.6rem;
+    text-align: justify;
+    color: var(--text-color);
+}
+.feature_item--img .img_brand{
+    height: 100%;
+    width: 100%;
+}
+.feature__item:nth-child(2) .feature__item--img{ /* đổi ảnh sang vtri t2*/
+    order: 2;
+}
+.feature__item .img_brand{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;/* đảm bảo chắc chắn sẽ đè lên ảnh cha*/
+}
+.feature__item--content{
+    height: 100%;
+    display: flex;
+    /* cot ben tren va ben duoi nam theo 1 cot doc */
+    flex-direction: column;
+    justify-content:space-between;
+}
+.feature__item--content-top{
+display: flex;
+justify-content: center;
+flex-direction: column;
+color: var(--bg-light);
+padding:  0 6.8rem;
+height: 67%;
+position: relative;
+
+}
+.feature__item--text{
+    font-size:1.6rem;
+    color: var(--text-color);
+    line-height: 1.6;
+    text-align:justify;
+    padding-bottom: 4rem;
+    position: relative;
+
+}
+/* tao css dau gach ngang ben duoi the p */
+.feature__item--text::after{
+    content: " ";
+    position: absolute;
+    width: 7rem; /* chiều rộng kẻ gạch*/
+    background-color: #d7d7d7;
+    height: 1px; /* chiều cao đg kẻ*/
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);/* right : 50%*/
+}
+
+/* tao arrow css => mũi tên tắng xuống */
+.feature__item--content-top::after{
+    content: "";
+    position: absolute;
+   width: 3rem;
+   height: 3rem;
+   background-color: red;
+   /* có top sẽ ko dùng bottom, có right sẽ ko dùng left  */
+   bottom: 0;
+   left: 50%;
+   /* translate(-50% , 50%) : right: -50%; top:50%
+    rotate(-45deg) : nghiêng góc 45 độ
+    ;*/
+   transform: translate(-50% , 50%) rotate(-45deg);
+   z-index: 10;
+}
+/* xu ly css cho cac thanh phan o li cuoi cung */
+.feature__item:last-child > .feature__item--img{
+    width: 33%;
+}
+.feature__item:last-child > .feature__item--content{
+    width: 33%;
+}
+/* .feature__item:last-child .feature__item--content-bottom{
+    width: 100%;
+} */

@@ -1,0 +1,78 @@
+/*  dấu * select tất cả file css cho html */
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+
+:root {
+    --my-color: rgb(144, 225, 51);
+}
+
+.box {
+    width: 300px;
+    height: 300px;
+    display: inline-block;
+}
+
+.box-1 {
+    border: 1px solid red;
+}
+
+.box-2 {
+    border: 1px solid blue;
+}
+
+h1.content {
+    /* margin-top: 30px;
+    margin-left: 30px; */
+    padding-top: 30px;
+    padding-left: 30px;
+}
+
+div.content {
+    width: 800px;
+    height: 400px;
+    /* var(tên biến) gọi biến đã khai bao ra sd*/
+    border: thin solid var(--my-color);
+}
+
+.child {
+    width: 200px;
+    height: 200px;
+}
+
+.content-1 {
+    background-color: green;
+    float: right;
+}
+
+.content-2 {
+    background-color: blue;
+    float: right;
+}
+
+.content-3 {
+    background-color: orange;
+}
+
+.clear {
+    clear: both;
+}
+
+.wraper {
+    width: 200px;
+    height: 200px;
+    background-color: pink;
+    position: relative;
+}
+
+.wraper__icon {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 20px;
+}
