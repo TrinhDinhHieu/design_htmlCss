@@ -1,0 +1,10 @@
+{
+  "name": "js",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Zenbeo <trinhhieu130520@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^18.2.0"
+  }
+}
