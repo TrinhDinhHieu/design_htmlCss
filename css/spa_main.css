@@ -68,11 +68,9 @@ input, textarea, button{
 }
 .bg--color{
     position: absolute;
-    /* z-index: -2; */
+    z-index: -2;
     top: -1%;
     right: -5%;
-    
-  
 }
 .item__header{
 display: flex;
@@ -111,6 +109,7 @@ padding-right: 14rem;
     font-weight: 400;
     color: var(--primaryColor);
     margin-bottom: 4.5rem;
+    text-transform: uppercase;
     
 }
 .content__center{
@@ -432,7 +431,7 @@ background-color: #fcf5ee;
 }
 
 /* contact  */
-.contact{
+ .contact{
     height: 106.6rem;
     width: 100%;
     display: flex;
@@ -463,7 +462,7 @@ background-color: #fcf5ee;
     display: flex;
     justify-content: center;
     align-items: flex-start;
-
+    position: relative;
 }
 .contact__list{
     margin: 0 1.5rem;
@@ -489,15 +488,15 @@ background-color: #fcf5ee;
     position: absolute;
     top: 0%;
     left: 0%;
-    margin: 38rem 3rem 0;
+    margin: 38rem 3rem 0; 
     /* position: relative; */
 }
 .contact__brand-link{
     display: flex;
     justify-content: center;
     margin: 3rem auto 2rem;
-    
 }
+/* icon  */
 .brand__link{
     height: 3rem;
     width: 3rem;
@@ -509,14 +508,66 @@ background-color: #fcf5ee;
     margin: 0 0.7rem;
 
 }
+.contact__list:hover .contact__brand{
+    bottom: 10.3rem;
+    box-shadow: 1rem 1rem 2rem var(--bgsliver);
+}
+.contact__brand{
+    position: absolute;
+    width: 30rem;
+    height: 17rem;
+    bottom: 3rem;
+    /* left: 3rem; */
+    background-color: #ffffff; 
+}
+.contact__list::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    display: none; 
+ }
+.contact__list:hover .contact__brand {
+    margin-top: 33rem;
+     box-shadow: 0.5rem 0.5rem 0.5rem var(--bgDark); 
+     padding-bottom: 4rem; 
 
+ }  
+
+  .brand__link:hover {
+    background-color: #ff817e;
+    border: none;
+    color: white;
+}
+.color_icon{
+    color: #3e4548;
+}
+.brand__link:hover > .color_icon{
+    color: white;
+}
+.contact__list:hover::before , .contact__list:hover .contact__brand--hover{
+    display: block;
+    cursor: pointer;
+    margin-top: 4rem;
+   
+} 
+/* ẩn ul icon  */
+ .contact__brand--hover{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 20;
+    text-align: center;
+    display: none;
+} 
 .brand-message{
 margin-top: 1.2rem;
-}
-/* .twitter_bg{
-    background-color: var(--primaryColor);
-    border-color: #ff817e;
-} */
+} 
+
 /* book  */
 .book{
     height: 64.4rem;
