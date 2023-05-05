@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom - js</title>
+    <style>
+        .box{
+            height: 350px;
+            width: 350px;
+            border:  1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <!-- onClick là 1 event cùa js , là 1 thao tác bắt sự kiện,
+     -->
+    <button onclick="myClick()">Click me</button>
+    <input type="text" onchange="getText(this)"> 
+    <!-- onchange : là thuộc tính lấy value bên trong input  -->
+    <!-- this là tham số giúp t trỏ vào thẻ -->
+    <input type="text" onkeydown="myKeyDwn()" onkeypress="onKeyPrs()" onkeyup="onKeyUp(obj)">
+    <!-- onkeydown : gõ phím , onkeypress : giữ phím , onkeyup : nhấc ra khỏi phím  , obj.key : thể hiện cho biết đag viết gì trên input -->
+    <div class="box" onmousedown="onMouseDown()" onmouseup="onMouSeup()" onmousemove="onMouseMove()" onmouseover="onMouseOver(this)" onmouseout="onMouseOut(this)">
+
+    </div>
+    <script>
+        // const myClick = function(){
+        //     alert('jii')
+        // }
+
+        function myClick(){ // dùng function này vi có thể gọi ở dk các chỗ khác . trừ 2 loại
+            alert('hi')
+        }
+        function getText(obj){
+            const data = obj.value.trim();//.trim() là in ra ko lấy thuộc tính 2 đầu space
+            console.log(data);
+        }
+        function onKeyDwn(){
+            console.log('bạn đag án phím');
+        }
+        function onKeyPrs(){
+            console.log('bạn đag giữ phím');
+        }
+        function onKeyUp(obj){
+            
+            console.log('bạn đag bỏ ấn phím');
+        }
+        function onMouseDown(){
+            console.log('bạn nhấn xg chuột');
+        }
+        function onMouSeup(){
+            console.log('Ban vua nhac chuọt');
+        }
+        function onMouseMove(){
+            console.log('Mover chuọt');// di chuột vào div
+        }
+        function onMouseOver(obj){
+            obj.style.width = '200px';
+            obj.style.height = '300px'
+            console.log('Ban vua di chuotj vào  ');
+        }
+        function onMouseOut(obj){
+            obj.style.width = '200px';
+            obj.style.height = '300px'
+            console.log('ban vua di chuot ra ngoài');// di chuột vào div
+        }
+    </script>
+</body>
+</html>

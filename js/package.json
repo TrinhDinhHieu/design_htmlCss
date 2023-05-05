@@ -5,6 +5,7 @@
   "author": "Zenbeo <trinhhieu130520@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "axios": "^1.3.5",
     "react": "^18.2.0"
   }
 }
